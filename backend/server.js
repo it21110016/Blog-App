@@ -16,20 +16,21 @@ const app = express();
 // middleware
 app.use(express.json());
 
-// app.use((req, res, next) => {
-//     console.log(`${req.method} ${req.path}`);
-//     next();
-// });
+//method to show the rest api call in the console
+app.use((req, res, next) => {
+    console.log(`${req.method} ${req.path}`);
+    next();
+});
 
 // use blog routes module
 app.use('/api/v1/blogs', blogRoutes);
 
 //connect to db
 mongoose
-    .connect(process.env.PUBLIC_URI, {dbName: process.DB_NAME})
+    .connect(process.env.MONGO_URI, {dbName: process.env.DB_NAME})
     .then(() => {
 
-        console.log("connected to the database");
+        console.log(`connected to the database ${process.env.DB_NAME}`);
 
         app.listen(process.env.PORT, (req, res) => {
             console.log(`Backend server is running on server ${process.env.PORT}`);
