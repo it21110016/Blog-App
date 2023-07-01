@@ -7,6 +7,9 @@ const express = require('express')
 // import mongoose
 const mongoose = require('mongoose');
 
+// Import cors module
+const cors = require('cors');
+
 // import blog routes module
 const blogRoutes = require('./routes/blogRoutes');
 
@@ -21,6 +24,11 @@ app.use((req, res, next) => {
     console.log(`${req.method} ${req.path}`);
     next();
 });
+
+// Use cors module
+app.use(cors({
+    origin: 'http://localhost',
+}));
 
 // use blog routes module
 app.use('/api/v1/blogs', blogRoutes);
