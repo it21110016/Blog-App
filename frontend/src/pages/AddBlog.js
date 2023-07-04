@@ -1,11 +1,19 @@
 import { useState } from "react";
+import NavBar from "../components/NavBar";
+import Footer from "../components/Footer";
+import { InputText } from 'primereact/inputtext';
+import { InputTextarea } from 'primereact/inputtextarea';
+import { Button } from 'primereact/button';
+import styles from '../styles/add.module.css';
 
 const AddBlog = () => {
+
   const [name, setName] = useState("");
   const [author, setAuthor] = useState("");
   const [description, setDescription] = useState("");
 
   async function handleSubmit(e) {
+
     e.preventDefault();
 
     const formData = {
@@ -15,14 +23,16 @@ const AddBlog = () => {
     };
 
     try {
-        const response = await fetch('http://localhost:5000/api/v1/blogs', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-      body: JSON.stringify(formData)
-    })
-    if (response.ok) {
+
+      const response = await fetch('http://localhost:5000/api/v1/blogs', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData)
+      })
+
+      if (response.ok) {
         // Blog added successfully
         alert('Blog added!');
 
@@ -34,24 +44,46 @@ const AddBlog = () => {
         // Handle error case
         console.error('Failed to add blog');
       }
-  }  catch (error) {
-    console.log(error.message);
+
+    } catch (error) {
+      console.log(error.message);
+    }
   }
-  
-}
+
   return (
     <>
-      <h1>add blog</h1>
-      <form onSubmit={handleSubmit}>
-        <label>Enter Blog Name:</label>
-        <input type="text" value={name} onChange={(e) => setName(e.target.value)}></input>
-        <label>Enter Blog Author:</label>
-        <input type="text" value={author} onChange={(e) => setAuthor(e.target.value)}></input>
-        <label>Enter Blog Description:</label>
-        <input type="text" value={description} onChange={(e) => setDescription(e.target.value)}></input>
+      <NavBar />
 
-        <button type="submit">Create</button>
+      <h1 className={styles.header}>Add New Blog</h1>
+
+      <form className={styles.form} onSubmit={handleSubmit}>
+
+        <span className="p-float-label">
+          <InputText id="name" className={styles.input} value={name} onChange={(e) => setName(e.target.value)} required />
+          <label htmlFor="name" className={styles.input}>Enter Blog Name:</label>
+        </span>
+
+        <br />
+
+        <span className="p-float-label">
+          <InputText id="author" className={styles.input} value={author} onChange={(e) => setAuthor(e.target.value)} required />
+          <label htmlFor="author" className={styles.input}>Enter Blog Author:</label>
+        </span>
+
+        <br />
+
+        <span className="p-float-label">
+          <InputTextarea id="description" className={styles.text} value={description} onChange={(e) => setDescription(e.target.value)} rows={5} cols={30} required />
+          <label htmlFor="description" className={styles.input}>Enter Blog Description:</label>
+        </span>
+
+        <br />
+
+        <Button className={styles.button} type="submit" label="Submit" />
+
       </form>
+
+      <Footer />
     </>
   );
 };
