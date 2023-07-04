@@ -1,0 +1,111 @@
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: brown;
+  font-size: 100px;
+  margin-top: -5px;
+}
+
+.container {
+  padding: 20px;
+}
+
+.header {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.searchContainer {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 5px;
+}
+
+.searchInput {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.tableContainer {
+  background-color: #f4f4f4;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+table {
+  width: 100%;
+
+}
+
+th,
+td {
+  padding: 12px;
+  text-align: left;
+}
+
+thead {
+  background-color: #a79494;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #ececec;
+}
+
+tbody tr:hover {
+  background-color: #c0dbdf;
+}
+
+.actionButtons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.actionButtons button {
+  padding: 6px 12px;
+  margin-left: 8px;
+  border-radius: 4px;
+  border: none;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+}
+
+#delete {
+  background-color: red;
+}
+
+#view {
+  background-color: #bebc1b
+}
+
+.actionButtons button:hover {
+  background-color: #0056b3;
+}
+
+.addButton {
+  margin-top: 30px;
+  margin-bottom: -55px;
+  width: 200px;
+  height: 50px;
+  margin-left: 83%;
+  background-color: rgb(36, 199, 36);
+}
+
+.addButton:hover {
+  background-color: green
+}
+
+.pdfButton {
+  margin-top: -40px;
+  background-color: #db571a;
+  width: 200px;
+  height: 50px;
+  margin-bottom: 20px;
+}
+
+.pdfButton:hover {
+  background-color: brown;
+}
