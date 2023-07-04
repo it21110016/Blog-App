@@ -1,4 +1,5 @@
 import React from 'react';
+import img from './img.png'
 
 const NavBar = () => {
 
@@ -36,15 +37,18 @@ const NavBar = () => {
 
     return (
         <nav style={styles.navbar}>
+
             <div style={styles.logoContainer}>
-                <a href="/"><img src="./img.png" alt="Logo" style={styles.logo} /></a>
+                <a href="/"><img src={img} alt="Logo" style={styles.logo} /></a>
             </div>
+
             <ul style={styles.navbarList}>
                 <li style={styles.navbarItem}><a href="/" style={styles.navbarLink}><i className="pi pi-home" style={{ color: 'black', fontSize: '1.2rem' }}> Home</i></a></li>
                 <li style={styles.navbarItem}><a href="#about" style={styles.navbarLink}><i className="pi pi-user" style={{ color: 'black', fontSize: '1.2rem' }}> About</i></a></li>
                 <li style={styles.navbarItem}><a href="#services" style={styles.navbarLink}><i className="pi pi-briefcase" style={{ color: 'black', fontSize: '1.2rem' }}> Services</i></a></li>
                 <li style={styles.navbarItem}><a href="#contact" style={styles.navbarLink}><i className="pi pi-phone" style={{ color: 'black', fontSize: '1.2rem' }}> Contact</i></a></li>
             </ul>
+
         </nav>
     );
 };
