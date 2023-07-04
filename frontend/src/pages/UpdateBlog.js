@@ -1,5 +1,11 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import NavBar from "../components/NavBar";
+import Footer from "../components/Footer";
+import styles from '../styles/update.module.css';
+import { Button } from 'primereact/button';
+import { InputTextarea } from 'primereact/inputtextarea';
+import { InputText } from 'primereact/inputtext';
 
 const UpdateBlog = () => {
 
@@ -32,9 +38,11 @@ const UpdateBlog = () => {
         }
 
         getBlog();
+
     }, [id]);
 
     async function handleSubmit(e) {
+
         e.preventDefault();
 
         const formData = {
@@ -44,6 +52,7 @@ const UpdateBlog = () => {
         };
 
         try {
+
             const response = await fetch(
                 `http://localhost:5000/api/v1/blogs/${id}`,
                 {
@@ -65,6 +74,7 @@ const UpdateBlog = () => {
             } else {
                 console.error("Failed to update blog");
             }
+
         } catch (error) {
             console.error(error.message);
         }
@@ -72,28 +82,48 @@ const UpdateBlog = () => {
 
     return (
         <>
-            <h1>Update Blog</h1>
-            <form onSubmit={handleSubmit}>
-                <label>Name:</label>
-                <input
+            <NavBar />
+
+            <h1 className={styles.header}>Update Blog</h1>
+
+            <form className={styles.form} onSubmit={handleSubmit}>
+
+                <label className={styles.label}>Name:</label>
+                <InputText
+                    className={styles.input}
                     type="text"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                 />
-                <label>Author:</label>
-                <input
+
+                <br /><br />
+
+                <label className={styles.label}>Author:</label>
+                <InputText
+                    className={styles.input}
                     type="text"
                     value={author}
                     onChange={(e) => setAuthor(e.target.value)}
                 />
-                <label>Description:</label>
-                <input
+
+                <br /><br />
+
+                <label className={styles.label}>Description:</label>
+                <InputTextarea
+                    className={styles.text}
                     type="text"
                     value={description}
                     onChange={(e) => setDescription(e.target.value)}
+                    rows={5} cols={30}
                 />
-                <button type="submit">Update</button>
+
+                <br /><br />
+
+                <Button className={styles.button} type="submit" label="Update" />
+
             </form>
+
+            <Footer />
         </>
     );
 };

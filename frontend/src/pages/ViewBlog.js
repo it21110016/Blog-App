@@ -1,9 +1,12 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import NavBar from "../components/NavBar";
+import Footer from "../components/Footer";
+import styles from '../styles/view.module.css';
 
 const ViewBlog = () => {
 
-    const {id} = useParams();
+    const { id } = useParams();
 
     const [blog, setBlogs] = useState([]);
 
@@ -15,10 +18,10 @@ const ViewBlog = () => {
 
                 const data = await res.json();
 
-                if(data){
+                if (data) {
                     setBlogs(data);
                 }
-                
+
             } catch (error) {
                 console.log(error.message);
             }
@@ -26,16 +29,23 @@ const ViewBlog = () => {
 
         getBlog();
 
-    },[id])
+    }, [id])
 
-    return(
+    return (
         <>
-            <h1>View Blog</h1>
-            <div>
-                <p>{blog.name}</p>
-                <p>{blog.author}</p>
-                <p>{blog.description}</p>
+            <NavBar />
+
+            <h1 className={styles.header} style={{ fontSize: "40px" }}>View Blog</h1>
+
+            <hr />
+
+            <div className={styles.container}>
+                <p className={styles.name}>{blog.name}</p>
+                <p className={styles.author}>By: {blog.author}</p>
+                <p className={styles.description}>{blog.description}</p>
             </div>
+
+            <Footer />
         </>
     )
 }
