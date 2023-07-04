@@ -6,7 +6,7 @@ import "primeicons/primeicons.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from './pages/Home';
 import AddBlog from './pages/AddBlog';
-import ViewBlog from './pages/viewBlog';
+import ViewBlog from './pages/ViewBlog';
 import UpdateBlog from './pages/UpdateBlog';
 
 function App() {
