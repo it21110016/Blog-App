@@ -36,8 +36,8 @@ jobs:
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
         with:
-          name: mern-app
-          path: mern/server
+          name: node-app
+          path: backend
 
   deploy:
     runs-on: ubuntu-latest
