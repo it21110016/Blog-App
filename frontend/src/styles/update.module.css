@@ -1,0 +1,35 @@
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: brown;
+}
+
+.form {
+  width: 500px;
+  height: 430px;
+  background-color: #80d874;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  align-items: center;
+  margin-left: 32%;
+}
+
+.label {
+  margin-left: 50px;
+}
+
+.input {
+  margin: 5px;
+  margin-left: 20px;
+}
+
+.text {
+  margin: 5px;
+  margin-left: 80px;
+}
+
+button {
+  width: 100%;
+}

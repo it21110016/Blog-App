@@ -7,6 +7,11 @@ const express = require('express')
 // import mongoose
 const mongoose = require('mongoose');
 
+// Import cors module
+const cors = require('cors');
+
+const path = require('path')
+
 // import blog routes module
 const blogRoutes = require('./routes/blogRoutes');
 
@@ -22,8 +27,18 @@ app.use((req, res, next) => {
     next();
 });
 
+// Use cors module
+app.use(cors({
+    origin: 'http://localhost',
+}));
+
 // use blog routes module
 app.use('/api/v1/blogs', blogRoutes);
+
+app.use(express.static("../frontend/build"));
+app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "frontend", "build", "index.html"))
+})
 
 //connect to db
 mongoose
