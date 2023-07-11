@@ -10,6 +10,8 @@ const mongoose = require('mongoose');
 // Import cors module
 const cors = require('cors');
 
+const path = require('path')
+
 // import blog routes module
 const blogRoutes = require('./routes/blogRoutes');
 
@@ -32,6 +34,11 @@ app.use(cors({
 
 // use blog routes module
 app.use('/api/v1/blogs', blogRoutes);
+
+app.use(express.static("../frontend/build"));
+app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "frontend", "build", "index.html"))
+})
 
 //connect to db
 mongoose

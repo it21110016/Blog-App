@@ -24,7 +24,7 @@ const AddBlog = () => {
 
     try {
 
-      const response = await fetch('http://localhost:5000/api/v1/blogs', {
+      const response = await fetch('https://testex1.azurewebsites.net/api/v1/blogs', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
