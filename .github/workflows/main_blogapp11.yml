@@ -31,7 +31,7 @@ jobs:
           npm install
           npm run build
           npm start
-          cp -r ./build ../server/public
+          
             
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
