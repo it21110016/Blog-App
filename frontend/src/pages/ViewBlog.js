@@ -14,7 +14,7 @@ const ViewBlog = () => {
         async function getBlog() {
             try {
 
-                const res = await fetch(`https://testex1.azurewebsites.net/api/v1/blogs/${id}`)
+                const res = await fetch(`http://localhost:5000/api/v1/blogs/${id}`)
 
                 const data = await res.json();
 
