@@ -16,7 +16,7 @@ const Home = () => {
     async function getBlogs() {
       try {
 
-        const res = await fetch("/api/v1/blogs");
+        const res = await fetch("https://blog-app-6vki.onrender.com/api/v1/blogs");
 
         const data = await res.json();
 
