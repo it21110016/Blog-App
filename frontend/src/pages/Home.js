@@ -36,7 +36,7 @@ const Home = () => {
   async function deleteBlog(id) {
     try {
       const response = await fetch(
-        `http://localhost:5000/api/v1/blogs/${id}`,
+        `https://blog-app-6vki.onrender.com/api/v1/blogs/${id}`,
         {
           method: "DELETE",
         }
