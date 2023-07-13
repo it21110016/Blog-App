@@ -16,7 +16,7 @@ const Home = () => {
     async function getBlogs() {
       try {
 
-        const res = await fetch("http://localhost:5000/api/v1/blogs");
+        const res = await fetch("/api/v1/blogs");
 
         const data = await res.json();
 
