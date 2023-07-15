@@ -27,7 +27,7 @@ app.use((req, res, next) => {
 
 // Use cors module
 app.use(cors({
-    origin: 'http://localhost',
+    origin: 'https://blog-app-6vki.onrender.com',
 }));
 
 // use blog routes module
