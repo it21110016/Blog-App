@@ -26,17 +26,14 @@ app.use((req, res, next) => {
 });
 
 // Use cors module
-app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', '*');
-    next();
-});
+app.use(cors());
 
 // use blog routes module
 app.use('/api/v1/blogs', blogRoutes);
 
 //connect to db
 mongoose
-    .connect(process.env.MONGO_URI, { dbName: process.env.DB_NAME })
+    .connect(process.env.MONGO_URI, {dbName: process.env.DB_NAME})
     .then(() => {
 
         console.log(`connected to the database ${process.env.DB_NAME}`);
@@ -47,7 +44,7 @@ mongoose
 
     })
     .catch(Error => {
-        console.log(Error);
+        console.log(Error); 
     });
 
 // export app
