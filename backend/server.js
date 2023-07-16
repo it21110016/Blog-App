@@ -25,7 +25,7 @@ app.use((req, res, next) => {
     next();
 });
 
-// Use cors module
+// Use cors module and enable all CORS requests
 app.use(cors());
 
 // use blog routes module
