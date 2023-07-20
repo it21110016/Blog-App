@@ -89,7 +89,7 @@ const Home = () => {
         <NavBar />
 
         <div className={styles.container}>
-          <h1 className={styles.header} style={{ fontSize: "40px" }}>Blogs</h1>
+          <h1 className={styles.header} >Blogs</h1>
 
           <div className={styles.searchContainer}>
             <span className="p-input-icon-left" >

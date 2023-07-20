@@ -85,43 +85,45 @@ const UpdateBlog = () => {
             <NavBar />
 
             <h1 className={styles.header}>Update Blog</h1>
+            <div className={styles.container}>
+                <form className={styles.form} onSubmit={handleSubmit}>
 
-            <form className={styles.form} onSubmit={handleSubmit}>
+                    <label className={styles.label}>Name:</label>
+                    <InputText
+                        className={styles.input}
+                        type="text"
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                    />
 
-                <label className={styles.label}>Name:</label>
-                <InputText
-                    className={styles.input}
-                    type="text"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                />
+                    <br /><br />
 
-                <br /><br />
+                    <label className={styles.label}>Author:</label>
+                    <InputText
+                        className={styles.input}
+                        type="text"
+                        value={author}
+                        onChange={(e) => setAuthor(e.target.value)}
+                    />
 
-                <label className={styles.label}>Author:</label>
-                <InputText
-                    className={styles.input}
-                    type="text"
-                    value={author}
-                    onChange={(e) => setAuthor(e.target.value)}
-                />
+                    <br /><br />
+                    <label className={styles.label} >Description:</label>
+                    <br /><br />
 
-                <br /><br />
+                    <InputTextarea
+                        className={styles.text}
+                        type="text"
+                        value={description}
+                        onChange={(e) => setDescription(e.target.value)}
+                        rows={5} cols={30}
+                    />
 
-                <label className={styles.label}>Description:</label>
-                <InputTextarea
-                    className={styles.text}
-                    type="text"
-                    value={description}
-                    onChange={(e) => setDescription(e.target.value)}
-                    rows={5} cols={30}
-                />
+                    <br /><br />
 
-                <br /><br />
+                    <Button className={styles.button} type="submit" label="Update" />
 
-                <Button className={styles.button} type="submit" label="Update" />
-
-            </form>
+                </form>
+            </div>
 
             <Footer />
         </>

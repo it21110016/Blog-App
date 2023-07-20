@@ -35,7 +35,7 @@ const ViewBlog = () => {
         <>
             <NavBar />
 
-            <h1 className={styles.header} style={{ fontSize: "40px" }}>View Blog</h1>
+            <h1 className={styles.header} >View Blog</h1>
 
             <hr />
 
