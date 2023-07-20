@@ -55,34 +55,34 @@ const AddBlog = () => {
       <NavBar />
 
       <h1 className={styles.header}>Add New Blog</h1>
+      <div className={styles.container}>
+        <form className={styles.form} onSubmit={handleSubmit}>
 
-      <form className={styles.form} onSubmit={handleSubmit}>
+          <span className="p-float-label">
+            <InputText id="name" className={styles.input} value={name} onChange={(e) => setName(e.target.value)} required />
+            <label htmlFor="name" className={styles.input}>Enter Blog Name:</label>
+          </span>
 
-        <span className="p-float-label">
-          <InputText id="name" className={styles.input} value={name} onChange={(e) => setName(e.target.value)} required />
-          <label htmlFor="name" className={styles.input}>Enter Blog Name:</label>
-        </span>
+          <br />
 
-        <br />
+          <span className="p-float-label">
+            <InputText id="author" className={styles.input} value={author} onChange={(e) => setAuthor(e.target.value)} required />
+            <label htmlFor="author" className={styles.input}>Enter Blog Author:</label>
+          </span>
 
-        <span className="p-float-label">
-          <InputText id="author" className={styles.input} value={author} onChange={(e) => setAuthor(e.target.value)} required />
-          <label htmlFor="author" className={styles.input}>Enter Blog Author:</label>
-        </span>
+          <br />
 
-        <br />
+          <span className="p-float-label">
+            <InputTextarea id="description" className={styles.text} value={description} onChange={(e) => setDescription(e.target.value)} rows={5} cols={30} required />
+            <label htmlFor="description" className={styles.input}>Enter Blog Description:</label>
+          </span>
 
-        <span className="p-float-label">
-          <InputTextarea id="description" className={styles.text} value={description} onChange={(e) => setDescription(e.target.value)} rows={5} cols={30} required />
-          <label htmlFor="description" className={styles.input}>Enter Blog Description:</label>
-        </span>
+          <br />
 
-        <br />
+          <Button className={styles.button} type="submit" label="Submit" />
 
-        <Button className={styles.button} type="submit" label="Submit" />
-
-      </form>
-
+        </form>
+      </div>
       <Footer />
     </>
   );
