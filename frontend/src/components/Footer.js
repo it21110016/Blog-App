@@ -30,31 +30,15 @@ const Footer = () => {
         <ul>
           <h1 className="mb-1 font-semibold">Products</h1>
           <li >
-            <a className="text-gray-400 hover:text-teal-400 duration-300 text-sm cursor-pointer leading-6" href=''
+            <a className="text-gray-400 hover:text-teal-400 duration-300 text-sm cursor-pointer leading-6" href='/'
             >Drag And Drop</a>
           </li>
           <li >
-            <a className="text-gray-400 hover:text-teal-400 duration-300 text-sm cursor-pointer leading-6" href='#'
+            <a className="text-gray-400 hover:text-teal-400 duration-300 text-sm cursor-pointer leading-6" href='/'
             >Drag And Drop</a>
           </li>
           <li >
-            <a className="text-gray-400 hover:text-teal-400 duration-300 text-sm cursor-pointer leading-6" href='#'
-            >Drag And Drop</a>
-          </li>
-        </ul>
-
-        <ul>
-          <h1 className="mb-1 font-semibold">Products</h1>
-          <li >
-            <a className="text-gray-400 hover:text-teal-400 duration-300 text-sm cursor-pointer leading-6" href='#'
-            >Drag And Drop</a>
-          </li>
-          <li >
-            <a className="text-gray-400 hover:text-teal-400 duration-300 text-sm cursor-pointer leading-6" href='#'
-            >Drag And Drop</a>
-          </li>
-          <li >
-            <a className="text-gray-400 hover:text-teal-400 duration-300 text-sm cursor-pointer leading-6" href='#'
+            <a className="text-gray-400 hover:text-teal-400 duration-300 text-sm cursor-pointer leading-6" href='/'
             >Drag And Drop</a>
           </li>
         </ul>
@@ -62,15 +46,15 @@ const Footer = () => {
         <ul>
           <h1 className="mb-1 font-semibold">Products</h1>
           <li >
-            <a className="text-gray-400 hover:text-teal-400 duration-300 text-sm cursor-pointer leading-6" href='#'
+            <a className="text-gray-400 hover:text-teal-400 duration-300 text-sm cursor-pointer leading-6" href='/'
             >Drag And Drop</a>
           </li>
           <li >
-            <a className="text-gray-400 hover:text-teal-400 duration-300 text-sm cursor-pointer leading-6" href='#'
+            <a className="text-gray-400 hover:text-teal-400 duration-300 text-sm cursor-pointer leading-6" href='/'
             >Drag And Drop</a>
           </li>
           <li >
-            <a className="text-gray-400 hover:text-teal-400 duration-300 text-sm cursor-pointer leading-6" href='#'
+            <a className="text-gray-400 hover:text-teal-400 duration-300 text-sm cursor-pointer leading-6" href='/'
             >Drag And Drop</a>
           </li>
         </ul>
@@ -78,15 +62,31 @@ const Footer = () => {
         <ul>
           <h1 className="mb-1 font-semibold">Products</h1>
           <li >
-            <a className="text-gray-400 hover:text-teal-400 duration-300 text-sm cursor-pointer leading-6" href='#'
+            <a className="text-gray-400 hover:text-teal-400 duration-300 text-sm cursor-pointer leading-6" href='/'
             >Drag And Drop</a>
           </li>
           <li >
-            <a className="text-gray-400 hover:text-teal-400 duration-300 text-sm cursor-pointer leading-6" href='#'
+            <a className="text-gray-400 hover:text-teal-400 duration-300 text-sm cursor-pointer leading-6" href='/'
             >Drag And Drop</a>
           </li>
           <li >
-            <a className="text-gray-400 hover:text-teal-400 duration-300 text-sm cursor-pointer leading-6" href='#'
+            <a className="text-gray-400 hover:text-teal-400 duration-300 text-sm cursor-pointer leading-6" href='/'
+            >Drag And Drop</a>
+          </li>
+        </ul>
+
+        <ul>
+          <h1 className="mb-1 font-semibold">Products</h1>
+          <li >
+            <a className="text-gray-400 hover:text-teal-400 duration-300 text-sm cursor-pointer leading-6" href='/'
+            >Drag And Drop</a>
+          </li>
+          <li >
+            <a className="text-gray-400 hover:text-teal-400 duration-300 text-sm cursor-pointer leading-6" href='/'
+            >Drag And Drop</a>
+          </li>
+          <li >
+            <a className="text-gray-400 hover:text-teal-400 duration-300 text-sm cursor-pointer leading-6" href='/'
             >Drag And Drop</a>
           </li>
         </ul>
