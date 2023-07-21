@@ -10,6 +10,7 @@ import jsPDF from 'jspdf';
 const Home = () => {
 
   const [blogs, setBlogs] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState("");
 
   useEffect(() => {
@@ -22,10 +23,12 @@ const Home = () => {
 
         if (data) {
           setBlogs(data);
+          setIsLoading(false); // Set loading to false when data is fetched
         }
 
       } catch (error) {
         console.log(error.toString());
+        setIsLoading(false); // Set loading to false even if there's an error
       }
     }
 
@@ -101,27 +104,33 @@ const Home = () => {
           <button className={styles.pdfButton} onClick={GenerateReport}>Generate PDF</button>
 
           <div className={styles.tableContainer}>
-            <table>
-              <thead>
-                <tr>
-                  <th>Blog Name</th>
-                  <th>Action</th>
-                </tr>
-              </thead>
+            {isLoading ? (
+              <h1 style={{ fontSize: "40px" }}>🌀 Loading...</h1>
+            ) : (
+              <table>
 
-              <tbody>
-                {filteredBlogs.map((blog) => (
-                  <tr key={blog._id}>
-                    <td>{blog.name}</td>
-                    <td className={styles.actionButtons}>
-                      <button id={styles.view} onClick={() => { window.location.href = `/viewBlog/${blog._id}` }}>View Blog</button>
-                      <button onClick={() => { window.location.href = `/updateBlog/${blog._id}` }}>Update</button>
-                      <button id={styles.delete} onClick={() => deleteBlog(blog._id)}>Delete</button>
-                    </td>
+                <thead>
+                  <tr>
+                    <th>Blog Name</th>
+                    <th>Action</th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
+                </thead>
+
+                <tbody>
+                  {filteredBlogs.map((blog) => (
+                    <tr key={blog._id}>
+                      <td>{blog.name}</td>
+                      <td className={styles.actionButtons}>
+                        <button id={styles.view} onClick={() => { window.location.href = `/viewBlog/${blog._id}` }}>View Blog</button>
+                        <button onClick={() => { window.location.href = `/updateBlog/${blog._id}` }}>Update</button>
+                        <button id={styles.delete} onClick={() => deleteBlog(blog._id)}>Delete</button>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+
+              </table>
+            )}
           </div>
 
           <div>
