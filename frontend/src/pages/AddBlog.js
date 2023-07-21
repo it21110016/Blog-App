@@ -40,6 +40,11 @@ const AddBlog = () => {
         setAuthor("");
         setDescription("");
 
+        // Redirect to home page after 1 seconds
+        setTimeout(() => {
+          window.location.href = '/';
+        }, 1000);
+
       } else {
         // Handle error case
         console.error('Failed to add blog');

@@ -71,6 +71,12 @@ const UpdateBlog = () => {
                 setName("");
                 setAuthor("");
                 setDescription("");
+
+                // Redirect to home page after 1 seconds
+                setTimeout(() => {
+                    window.location.href = '/';
+                }, 1000);
+
             } else {
                 console.error("Failed to update blog");
             }
