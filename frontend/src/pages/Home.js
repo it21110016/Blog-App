@@ -17,7 +17,7 @@ const Home = () => {
     async function getBlogs() {
       try {
 
-        const res = await fetch("https://blog-app-6vki.onrender.com/api/v1/blogs");
+        const res = await fetch("https://blogapp11.azurewebsites.net/api/v1/blogs");
 
         const data = await res.json();
 
@@ -39,7 +39,7 @@ const Home = () => {
   async function deleteBlog(id) {
     try {
       const response = await fetch(
-        `https://blog-app-6vki.onrender.com/api/v1/blogs/${id}`,
+        `https://blogapp11.azurewebsites.net/api/v1/blogs/${id}`,
         {
           method: "DELETE",
         }
