@@ -21,7 +21,7 @@ const UpdateBlog = () => {
             try {
                 const res = await fetch(`https://blogapp11.azurewebsites.net/api/v1/blogs/${id}`);
                 const data = await res.json();
-                console.log(data)
+                // console.log(data)
 
                 if (data) {
                     setName(data.name);
