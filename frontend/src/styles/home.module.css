@@ -76,8 +76,16 @@ tbody tr:hover {
   background-color: red;
 }
 
+#delete:hover {
+  background-color: rgb(204, 3, 3);
+}
+
 #view {
-  background-color: #bebc1b
+  background-color: #bebc1b;
+}
+
+#view:hover {
+  background-color: #9b980e;
 }
 
 .actionButtons button:hover {
@@ -93,12 +101,13 @@ tbody tr:hover {
 }
 
 .addButton:hover {
+  transition: 0.4s;
   background-color: green
 }
 
 .pdfButton {
   margin-top: -40px;
-  background-color: #db571a;
+  background-color: #e96122;
   width: 200px;
   height: 50px;
   margin-bottom: 20px;
@@ -107,7 +116,8 @@ tbody tr:hover {
 }
 
 .pdfButton:hover {
-  background-color: brown;
+  transition: 0.4s;
+  background-color: #b9420b;
 }
 
 @media screen and (max-width: 650px) {

@@ -11,7 +11,9 @@ const NavBar = () => {
         <header>
             <nav className={styles.navbar}>
 
-                <img className={styles.logo} src={img} alt='Logo'></img>
+                <Link to='/'>
+                    <img className={styles.logo} src={img} alt='Logo'></img>
+                </Link>
 
                 <ul className={mobile ? styles.navmobile : styles.navLinks}
                     onClick={() => setMobile(false)}>
