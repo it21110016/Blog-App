@@ -19,7 +19,7 @@ const UpdateBlog = () => {
         async function getBlog() {
 
             try {
-                const res = await fetch(`https://blogapp11.azurewebsites.net/api/v1/blogs/${id}`);
+                const res = await fetch(`https://blogapp12.azurewebsites.net/api/v1/blogs/${id}`);
                 const data = await res.json();
                 // console.log(data)
 
@@ -54,7 +54,7 @@ const UpdateBlog = () => {
         try {
 
             const response = await fetch(
-                `https://blogapp11.azurewebsites.net/api/v1/blogs/${id}`,
+                `https://blogapp12.azurewebsites.net/api/v1/blogs/${id}`,
                 {
                     method: "PUT",
                     headers: {
