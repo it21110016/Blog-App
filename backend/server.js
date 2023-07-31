@@ -13,6 +13,9 @@ const cors = require('cors');
 // import blog routes module
 const blogRoutes = require('./routes/blogRoutes');
 
+// import user routes module
+const authRoutes = require('./routes/authRoutes');
+
 // express application
 const app = express();
 
@@ -30,6 +33,9 @@ app.use(cors());
 
 // use blog routes module
 app.use('/api/v1/blogs', blogRoutes);
+
+// use user routes module
+app.use('/api/v1/users', authRoutes);
 
 //connect to db
 mongoose
