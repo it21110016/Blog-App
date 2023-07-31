@@ -11,6 +11,7 @@ const AddBlog = () => {
   const [name, setName] = useState("");
   const [author, setAuthor] = useState("");
   const [description, setDescription] = useState("");
+  const [successMessage, setSuccessMessage] = useState('');
 
   async function handleSubmit(e) {
 
@@ -34,8 +35,8 @@ const AddBlog = () => {
 
       if (response.ok) {
         // Blog added successfully
-        alert('Blog added!');
-
+        // alert('Blog added!');
+        setSuccessMessage("Blog added successfully");
         setName("");
         setAuthor("");
         setDescription("");
@@ -43,7 +44,7 @@ const AddBlog = () => {
         // Redirect to home page after 1 seconds
         setTimeout(() => {
           window.location.href = '/';
-        }, 1000);
+        }, 1500);
 
       } else {
         // Handle error case
@@ -62,6 +63,13 @@ const AddBlog = () => {
       <h1 className={styles.header}>Add New Blog</h1>
       <div className={styles.container}>
         <form className={styles.form} onSubmit={handleSubmit}>
+
+          {/* Render the Tailwind CSS success alert */}
+          {successMessage && (
+            <div className="bg-green-100 border-l-4 border-green-500 text-green-700 p-4 m-4">
+              <p>{successMessage}</p>
+            </div>
+          )}
 
           <span className="p-float-label">
             <InputText id="name" className={styles.input} value={name} onChange={(e) => setName(e.target.value)} required />
