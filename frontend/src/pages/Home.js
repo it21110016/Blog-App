@@ -38,6 +38,12 @@ const Home = () => {
 
   async function deleteBlog(id) {
     try {
+      // Check if the user is logged in before proceeding with the delete request
+      const isLoggedIn = localStorage.getItem('token');
+      if (!isLoggedIn) {
+        alert("You must be logged in to perform this action.");
+        return;
+      }
       const response = await fetch(
         `https://blogapp12.azurewebsites.net/api/v1/blogs/${id}`,
         {

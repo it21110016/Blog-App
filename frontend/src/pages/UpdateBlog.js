@@ -14,6 +14,7 @@ const UpdateBlog = () => {
     const [name, setName] = useState("");
     const [author, setAuthor] = useState("");
     const [description, setDescription] = useState("");
+    const [successMessage, setSuccessMessage] = useState('');
 
     useEffect(() => {
         async function getBlog() {
@@ -66,7 +67,8 @@ const UpdateBlog = () => {
 
             if (response.ok) {
                 // Blog updated successfully
-                alert("Blog updated!");
+                // alert("Blog updated!");
+                setSuccessMessage("Blog updated successfully");
 
                 setName("");
                 setAuthor("");
@@ -75,7 +77,7 @@ const UpdateBlog = () => {
                 // Redirect to home page after 1 seconds
                 setTimeout(() => {
                     window.location.href = '/';
-                }, 1000);
+                }, 1500);
 
             } else {
                 console.error("Failed to update blog");
@@ -93,6 +95,13 @@ const UpdateBlog = () => {
             <h1 className={styles.header}>Update Blog</h1>
             <div className={styles.container}>
                 <form className={styles.form} onSubmit={handleSubmit}>
+
+                    {/* Render the Tailwind CSS success alert */}
+                    {successMessage && (
+                        <div className="bg-green-100 border-l-4 border-green-500 text-green-700 p-4 mb-4 ml-2 mr-3 md:ml-7">
+                            <p>{successMessage}</p>
+                        </div>
+                    )}
 
                     <label className={styles.label}>Name:</label>
                     <InputText
