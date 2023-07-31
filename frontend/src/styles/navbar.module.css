@@ -313,7 +313,8 @@
     .login,
     .logout {
         width: 25%;
-        font-size: 12px;
+        font-size: 15px;
+        transition: background-color 0.1s ease, color 0.1s ease, box-shadow 0.1s ease;
     }
 
     .signup {
@@ -341,8 +342,9 @@
     .login,
     .logout {
         width: 25%;
-        font-size: 12px;
+        font-size: 15px;
         width: 80px;
+        transition: background-color 0.1s ease, color 0.1s ease, box-shadow 0.1s ease;
     }
 
     .signup {
@@ -369,17 +371,17 @@
     .login,
     .logout {
         width: 20%;
-        font-size: 12px;
+        font-size: 14px;
         width: 80px;
+        transition: background-color 0.1s ease, color 0.1s ease, box-shadow 0.1s ease;
     }
 
     .signup {
-        margin-left: 35%;
-
+        margin-left: 33%;
     }
 
     .login {
-        margin-right: 10%;
+        margin-right: 9%;
     }
 
     .logout {
