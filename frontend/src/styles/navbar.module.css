@@ -319,11 +319,14 @@
 
     .signup {
         margin-left: 30%;
-
+        background-color: yellow;
+        color: rgb(55 65 81);
     }
 
     .login {
         margin-right: 10%;
+        background-color: yellow;
+        color: rgb(55 65 81);
     }
 
     .logout {
@@ -349,11 +352,14 @@
 
     .signup {
         margin-left: 30%;
-
+        background-color: yellow;
+        color: rgb(55 65 81);
     }
 
     .login {
         margin-right: 10%;
+        background-color: yellow;
+        color: rgb(55 65 81);
     }
 
     .logout {
@@ -373,21 +379,26 @@
         width: 20%;
         font-size: 14px;
         width: 80px;
-        transition: background-color 0.1s ease, color 0.1s ease, box-shadow 0.1s ease;
     }
 
     .signup:hover,
     .login:hover,
     .logout:hover {
+        background-color: transparent;
+        color: white;
         transition: background-color 0s ease, color 0s ease, box-shadow 0s ease;
     }
 
     .signup {
         margin-left: 33%;
+        background-color: yellow;
+        color: rgb(55 65 81);
     }
 
     .login {
         margin-right: 9%;
+        background-color: yellow;
+        color: rgb(55 65 81);
     }
 
     .logout {
