@@ -317,6 +317,14 @@
         transition: background-color 0.1s ease, color 0.1s ease, box-shadow 0.1s ease;
     }
 
+    .signup:hover,
+    .login:hover,
+    .logout:hover {
+        background-color: transparent;
+        color: white;
+        transition: background-color 0s ease, color 0s ease, box-shadow 0s ease;
+    }
+
     .signup {
         margin-left: 30%;
         background-color: yellow;
@@ -348,6 +356,14 @@
         font-size: 15px;
         width: 80px;
         transition: background-color 0.1s ease, color 0.1s ease, box-shadow 0.1s ease;
+    }
+
+    .signup:hover,
+    .login:hover,
+    .logout:hover {
+        background-color: transparent;
+        color: white;
+        transition: background-color 0s ease, color 0s ease, box-shadow 0s ease;
     }
 
     .signup {
