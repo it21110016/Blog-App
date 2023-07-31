@@ -11,6 +11,7 @@
     height: 75px;
     background-color: rgb(55 65 81);
     color: white;
+    padding: 0 30px 0 40px;
 }
 
 .logo {
@@ -28,7 +29,9 @@
 .about,
 .services,
 .contact,
-.signup {
+.signup,
+.login,
+.logout {
     text-decoration: none;
     color: white;
     font-size: 20px;
@@ -61,20 +64,38 @@
     width: 82%;
 }
 
-.signup {
+.signup,
+.login {
     border: 1px solid yellow;
     border-radius: 5px;
-    padding: 10px 15px;
+    /* padding: 10px 15px; */
     background-color: transparent;
     color: white;
     cursor: pointer;
     transition: background-color 0.4s ease, color 0.4s ease, box-shadow 0.3s ease;
 }
 
-.signup:hover {
+.logout {
+    border: 1px solid yellow;
+    border-radius: 5px;
+    padding: 10px 15px;
     background-color: yellow;
     color: rgb(55 65 81);
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.signup:hover,
+.login:hover {
+    background-color: yellow;
+    color: rgb(55 65 81);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.logout:hover {
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.4s ease, color 0.4s ease, box-shadow 0.3s ease;
 }
 
 .mobileMenuIcon {
@@ -82,7 +103,136 @@
     display: none;
 }
 
-@media screen and (max-width: 780px) {
+@media screen and (max-width: 1160px) {
+
+    .signup {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 120px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+
+    .home,
+    .about,
+    .services,
+    .contact,
+    .signup,
+    .login,
+    .logout {
+        text-decoration: none;
+        color: white;
+        font-size: 18px;
+        padding: 10px 10px;
+        margin: 0 10px;
+        cursor: pointer;
+        position: relative;
+    }
+
+    .signup,
+    .login {
+        border: 1px solid yellow;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        border-radius: 5px;
+        padding: 5px 8px;
+        font-size: 17px;
+        width: 85px;
+        background-color: transparent;
+        color: white;
+        cursor: pointer;
+        transition: background-color 0.4s ease, color 0.4s ease, box-shadow 0.3s ease;
+    }
+
+    .logout {
+        border: 1px solid yellow;
+        border-radius: 5px;
+        padding: 8px 10px;
+        background-color: yellow;
+        color: rgb(55 65 81);
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    }
+
+    .signup:hover,
+    .login:hover {
+        background-color: yellow;
+        color: rgb(55 65 81);
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    }
+
+    .logout:hover {
+        background-color: transparent;
+        color: white;
+        cursor: pointer;
+        transition: background-color 0.4s ease, color 0.4s ease, box-shadow 0.3s ease;
+    }
+
+
+}
+
+@media screen and (max-width: 800px) {
+
+    .home,
+    .about,
+    .services,
+    .contact,
+    .signup,
+    .login,
+    .logout {
+        text-decoration: none;
+        color: white;
+        font-size: 16px;
+        padding: 10px 10px;
+        margin: 0 10px;
+        cursor: pointer;
+        position: relative;
+    }
+
+    .signup,
+    .login {
+        border: 1px solid yellow;
+        border-radius: 5px;
+        padding: 8px 10px;
+        align-items: center;
+        border-radius: 5px;
+        padding: 5px 8px;
+        font-size: 15px;
+        width: 75px;
+        background-color: transparent;
+        color: white;
+        cursor: pointer;
+        transition: background-color 0.4s ease, color 0.4s ease, box-shadow 0.3s ease;
+    }
+
+    .logout {
+        border: 1px solid yellow;
+        border-radius: 5px;
+        padding: 8px 10px;
+        background-color: yellow;
+        color: rgb(55 65 81);
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    }
+
+    .signup:hover,
+    .login:hover {
+        background-color: yellow;
+        color: rgb(55 65 81);
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    }
+
+    .logout:hover {
+        background-color: transparent;
+        color: white;
+        cursor: pointer;
+        transition: background-color 0.4s ease, color 0.4s ease, box-shadow 0.3s ease;
+    }
+
+}
+
+@media screen and (max-width: 784px) {
     .logo {
         display: flex;
         position: absolute;
@@ -110,7 +260,9 @@
     .about,
     .services,
     .contact,
-    .signup {
+    .signup,
+    .login,
+    .logout {
         color: white;
         font-size: 18px;
         text-align: center;
@@ -125,8 +277,20 @@
         display: none;
     }
 
+    .signup,
+    .login,
+    .logout {
+        width: 25%;
+        font-size: 13px;
+    }
+
     .signup {
-        display: none;
+        margin-left: 50%;
+
+    }
+
+    .login {
+        margin-right: 10%;
     }
 
     .mobileMenuIcon {
@@ -141,4 +305,89 @@
         top: 15px;
         right: 25px;
     }
+}
+
+@media screen and (max-width: 784px) {
+
+    .signup,
+    .login,
+    .logout {
+        width: 25%;
+        font-size: 12px;
+    }
+
+    .signup {
+        margin-left: 30%;
+
+    }
+
+    .login {
+        margin-right: 10%;
+    }
+
+    .logout {
+        color: rgb(55 65 81);
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+        font-size: 17px;
+        width: 140px;
+        margin-left: 40%;
+    }
+
+}
+
+@media screen and (max-width: 430px) {
+
+    .signup,
+    .login,
+    .logout {
+        width: 25%;
+        font-size: 12px;
+        width: 80px;
+    }
+
+    .signup {
+        margin-left: 30%;
+
+    }
+
+    .login {
+        margin-right: 10%;
+    }
+
+    .logout {
+        color: rgb(55 65 81);
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+        font-size: 17px;
+        width: 120px;
+    }
+
+}
+
+@media screen and (max-width: 360px) {
+
+    .signup,
+    .login,
+    .logout {
+        width: 20%;
+        font-size: 12px;
+        width: 80px;
+    }
+
+    .signup {
+        margin-left: 35%;
+
+    }
+
+    .login {
+        margin-right: 10%;
+    }
+
+    .logout {
+        color: rgb(55 65 81);
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+        font-size: 15px;
+        width: 100px;
+        margin-right: 6%;
+    }
+
 }
