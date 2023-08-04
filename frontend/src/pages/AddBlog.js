@@ -25,7 +25,7 @@ const AddBlog = () => {
 
     try {
 
-      const response = await fetch('https://blogapp12.azurewebsites.net/api/v1/blogs', {
+      const response = await fetch('https://blog-app-6vki.onrender.com/api/v1/blogs', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

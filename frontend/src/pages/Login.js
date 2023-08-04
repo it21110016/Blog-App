@@ -35,7 +35,7 @@ const Login = () => {
 
     try {
       // Send user login data to the backend API
-      const response = await axios.post('https://blogapp12.azurewebsites.net/api/v1/users/login', formData);
+      const response = await axios.post('https://blog-app-6vki.onrender.com/api/v1/users/login', formData);
 
       // Handle success, save the JWT token to localStorage or a state management solution
       localStorage.setItem('token', response.data.token);
