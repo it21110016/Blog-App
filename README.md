@@ -26,4 +26,5 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 ### Deployment
 
-You can check the web app by visiting this link: [Blog-App](https://black-tree-02e702310.3.azurestaticapps.net)
+You can check the web app by visiting this links: [Blog-App](https://black-tree-02e702310.3.azurestaticapps.net)
+                                                  [Blog-App](https://blogapp-8b9i.onrender.com)
