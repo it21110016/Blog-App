@@ -13,6 +13,8 @@ const Home = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState("");
 
+  const token = localStorage.getItem('token'); //get token from local storage
+
   useEffect(() => {
     async function getBlogs() {
       try {
@@ -39,8 +41,8 @@ const Home = () => {
   async function deleteBlog(id) {
     try {
       // Check if the user is logged in before proceeding with the delete request
-      const isLoggedIn = localStorage.getItem('token');
-      if (!isLoggedIn) {
+      // const isLoggedIn = localStorage.getItem('token');
+      if (!token) {
         alert("You must be logged in to perform this action.");
         return;
       }
@@ -48,8 +50,17 @@ const Home = () => {
         `https://blog-app-6vki.onrender.com/api/v1/blogs/${id}`,
         {
           method: "DELETE",
+          headers: {
+            Authorization: `${token}`,
+          },
         }
       );
+
+      if (response.status === 401) {
+        // If token is not valid, show an alert and navigate to the login page
+        alert("Invalid Token, login again");
+        return;
+      }
 
       if (response.ok) {
         // Blog deleted successfully

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 import styles from '../styles/update.module.css';
@@ -10,19 +10,33 @@ import { InputText } from 'primereact/inputtext';
 const UpdateBlog = () => {
 
     const { id } = useParams();
+    const navigate = useNavigate(); // Initialize the navigate function
 
     const [name, setName] = useState("");
     const [author, setAuthor] = useState("");
     const [description, setDescription] = useState("");
     const [successMessage, setSuccessMessage] = useState('');
 
+    const token = localStorage.getItem('token'); //get token from local storage
+
     useEffect(() => {
         async function getBlog() {
 
             try {
-                const res = await fetch(`https://blog-app-6vki.onrender.com/api/v1/blogs/${id}`);
+                const res = await fetch(`https://blog-app-6vki.onrender.com/api/v1/blogs/${id}`, {
+                    headers: {
+                        Authorization: `${token}`, // I've removed the "Bearer" prefix here and backend as well
+                    },
+                });
                 const data = await res.json();
                 // console.log(data)
+
+                if (res.status === 401) {
+                    // If token is not valid, show an alert and navigate to the login page
+                    console.log("Invalid Token, login again");
+                    navigate("/login");
+                    return;
+                }
 
                 if (data) {
                     setName(data.name);
@@ -40,7 +54,7 @@ const UpdateBlog = () => {
 
         getBlog();
 
-    }, [id]);
+    }, [id, navigate, token]); // Include navigateand token in the dependency array
 
     async function handleSubmit(e) {
 
@@ -60,10 +74,18 @@ const UpdateBlog = () => {
                     method: "PUT",
                     headers: {
                         "Content-Type": "application/json",
+                        Authorization: `${token}`,
                     },
                     body: JSON.stringify(formData),
                 }
             );
+
+            if (response.status === 401) {
+                // If token is not valid, show an alert and navigate to the login page
+                console.log("Invalid Token, login again");
+                navigate("/login");
+                return;
+            }
 
             if (response.ok) {
                 // Blog updated successfully
