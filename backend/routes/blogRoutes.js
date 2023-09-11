@@ -7,7 +7,7 @@ const {
     updateBlog,
     deleteBlog
 
-   } = require('../controllers/blogController');
+} = require('../controllers/blogController');
 
 // import express module
 const express = require('express');
@@ -15,19 +15,22 @@ const express = require('express');
 // create router object
 const router = express.Router();
 
+// import authmiddle module
+const { requireAuth } = require('../middleware/authmiddle');
+
 // handle GET rquest at root
 router.get('/', getAllBlogs);
 
 // handle GET rquest at "/:id" uri
-router.get('/:id', getBlog);
+router.get('/:id', requireAuth, getBlog);
 
 // handle POST rquest at root
-router.post('/', addBlog);
+router.post('/', requireAuth, addBlog);
 
 // handle PUT rquest at "/:id" uri
-router.put('/:id', updateBlog);
+router.put('/:id', requireAuth, updateBlog);
 
 // handle DELETE rquest at "/:id" uri
-router.delete('/:id', deleteBlog);
+router.delete('/:id', requireAuth, deleteBlog);
 
 module.exports = router;
