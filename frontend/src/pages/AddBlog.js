@@ -5,6 +5,8 @@ import { InputText } from 'primereact/inputtext';
 import { InputTextarea } from 'primereact/inputtextarea';
 import { Button } from 'primereact/button';
 import styles from '../styles/add.module.css';
+import { useNavigate } from "react-router-dom";
+
 
 const AddBlog = () => {
 
@@ -12,6 +14,9 @@ const AddBlog = () => {
   const [author, setAuthor] = useState("");
   const [description, setDescription] = useState("");
   const [successMessage, setSuccessMessage] = useState('');
+
+  const navigate = useNavigate(); // Initialize the navigate function
+  const token = localStorage.getItem('token'); //get token from local storage
 
   async function handleSubmit(e) {
 
@@ -29,9 +34,17 @@ const AddBlog = () => {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          Authorization: `${token}`,
         },
         body: JSON.stringify(formData)
       })
+
+      if (response.status === 401) {
+        // If token is not valid, show an alert and navigate to the login page
+        alert("Invalid Token, login again");
+        navigate("/login");
+        return;
+      }
 
       if (response.ok) {
         // Blog added successfully
@@ -41,7 +54,7 @@ const AddBlog = () => {
         setAuthor("");
         setDescription("");
 
-        // Redirect to home page after 1 seconds
+        // Redirect to home page after 1.5 seconds
         setTimeout(() => {
           window.location.href = '/';
         }, 1500);
